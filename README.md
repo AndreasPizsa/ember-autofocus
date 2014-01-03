@@ -110,7 +110,7 @@ The default is `false`, which means that the browser will **not scroll** to the 
    :
 {{ autofocus scrolling="true" }}
 {# end of file #}
-
+```
 
 ## Caveats
 - **Will focus even on hidden/invisible items.** Pull Requests welcome.
