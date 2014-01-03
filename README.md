@@ -51,7 +51,7 @@ bower install -S ember-autofocus
 In your `index.html`:
 
 ```
-< script type="text/javascript" src="bower_components/ember-autofocus/dist/ember-autofocus.min.js)"></script>
+<script type="text/javascript" src="bower_components/ember-autofocus/dist/ember-autofocus.min.js)"></script>
 ```
 
 ### Copy & Paste
