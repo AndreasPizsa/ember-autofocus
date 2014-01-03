@@ -1,7 +1,7 @@
 ##ember-autofocus 0.0.1
 
 Automatically focus on an input field upon page load in Ember
-```
+```html
 // myView.handlebars
    :
 {{ input autofocus="true" }}
@@ -17,7 +17,7 @@ Gladly, there’s [this very useful recipe on the Ember web site ](http://emberj
 ) on how you’re supposed to do that; basically, you set the focus after the `didInsertElement` Ember event fires - done! [This](http://stackoverflow.com/questions/9468061/how-to-focus-after-initialization-with-emberjs), [this](http://stackoverflow.com/questions/14763318/set-focus-in-an-ember-application) and [this](http://stackoverflow.com/questions/12557584/how-to-use-autofocus-with-ember-js-templates) Stackoverflow answer propose similar techniques.
 
 
-Unfortunately, the proposed solutions require subclassing into your own `View`s, which [I do not like so much](http://en.wikipedia.org/wiki/Coupling_(computer_programming)) for various reasons.
+Unfortunately, the proposed solutions require subclassing into your own `View`s, which [I do not like so much](http://en.wikipedia.org/wiki/Coupling_%28computer_programming%29) for various reasons.
 
 Thus, [Change](http://31.media.tumblr.com/tumblr_lnssyhB9FW1qkmpj8o1_500.gif)!
 
@@ -26,7 +26,7 @@ Thus, [Change](http://31.media.tumblr.com/tumblr_lnssyhB9FW1qkmpj8o1_500.gif)!
 `ember-autofocus` bundles Ember's proposed technique into a neat package and adds a few improvements along the way:
 
 + **Just add water**. No coding. Load it, boom, hooray!
-+ **No more subclassing**. Because, [subclassing](http://en.wikipedia.org/wiki/Coupling_(computer_programming)).
++ **No more subclassing**. Because, [subclassing](http://en.wikipedia.org/wiki/Coupling_%28computer_programming%29).
 + **Works on any element**. If you pass it a CSS selector.
 + **No configuration**. If you don't pass a CSS selector it takes the first text input it finds.
 + **HTML5 compatible**. Uses the native `autofocus` attribute if available.
@@ -50,7 +50,7 @@ bower install -S ember-autofocus
 
 In your `index.html`:
 
-```
+```html
 <script type="text/javascript" src="bower_components/ember-autofocus/dist/ember-autofocus.min.js)"></script>
 ```
 
@@ -59,34 +59,12 @@ Well, honestly you can as well just copy and paste it into your `App.js` file bu
 
 ## Usage
 
-### Most Sophisticated (recommended)
-Use a CSS selector to autofocus on a specific element.
-
-```
-// myView.handlebars
-   :
-{{ autofocus on '#my-special-element .my-unique-class' }}
-{# end of file #}
-``` 
-
-### Laziest
-Autofocus on the first `<input>` element.
-
-```
-// myView.handlebars
-   :
-{{ input }}
-   :
-{{ autofocus }}
-{# end of file #}
-``` 
-
 ### Most compatible (recommended)
 + Sets the focus on the first `<input|button|textarea>` element with an `autofocus` attribute.
 + Uses the browser’s native HTML5 functionality if available.
 + Works in pre-HTML5 browsers.
 
-```
+```html
 // myView.handlebars
    :
 {{ input autofocus="autofocus"}}
@@ -95,13 +73,47 @@ Autofocus on the first `<input>` element.
 {# end of file #}
 ``` 
 
->
-> Chrome has a bug that makes autofocus really ugly. See "Caveats" further down.
->
+### Laziest
+Autofocus on the first `<input>` element.
+
+```html
+// myView.handlebars
+   :
+{{ input }}
+   :
+{{ autofocus }}
+{# end of file #}
+``` 
+
+### Most Sophisticated
+Use a CSS selector to autofocus on a specific element.
+
+```html
+// myView.handlebars
+   :
+{{ autofocus on '#my-special-element .my-unique-class' }}
+{# end of file #}
+``` 
+
+## Automatic scrolling in HTML5
+
+Safari, Chrome, Firefox and possibly other HTML5 browsers that support `autofocus` natively will set the keyboard focus to the specified field _and will automatically scroll there_. In my use case, that's not wanted because the input field may be below the screen fold and automatically scrolling there is not what users would expect.
+
+You can choose whether or not you want the scrolling behavior with the `scrolling` option:
+
+`scrolling = "true|false"`
+
+The default is `false`, which means that the browser will **not scroll** to the `autofocus` element.
+
+```html
+// myView.handlebars
+   :
+{{ autofocus scrolling="true" }}
+{# end of file #}
+
 
 ## Caveats
 - **Will focus even on hidden/invisible items.** Pull Requests welcome.
-- **Chrome 31.0.1650.57 Mac "jumping".** Nothing functional, but æsthetically very discomforting: ~~some HTML5 browsers~~ Chrome 31.0.1650.57 on the Mac will scroll to the _natively_ `autofocus`’ed element and then jump right back to the top of the page, which is pretty ugly and irritating. Please feel free to [file a Chromium Bug Report](http://www.chromium.org/for-testers/bug-reporting-guidelines). **I work around this in my own apps by leaving out the `autofocus` attribute and then using *"Most Sophisticated"* method described above (a specific CSS selector).**
 
 ## Building
 I extracted this from my project, created a few files and ran it through Dean Edward’s [Packer](http://dean.edwards.name/packer/). I'm serious.

@@ -6,11 +6,11 @@
   "main": "dist/ember-autofocus.min.js",
   "keywords": [
     "ember",
+    "emberjs",
     "focus",
     "input",
     "autofocus",
-    "pageload",
-    "emberjs"
+    "pageload"
   ],
   "authors": [
     "Andreas Pizsa"
@@ -22,5 +22,8 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies" : {
+    "ember": "1.2.0"
+  }
 }
