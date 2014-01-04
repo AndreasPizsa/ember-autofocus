@@ -5,6 +5,7 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+
     jshint: {
       options: {
         curly: false,
@@ -72,8 +73,14 @@ module.exports = function(grunt) {
           'license'         : null,
         }
       }
+    },
+
+    readme: {
+      options: {
+        metadata: this.pkg
+      }
     }
   });
 
-  grunt.registerTask('default',['jshint','uglify','update_json']);
+  grunt.registerTask('default',['jshint','uglify','update_json','readme']);
 };
