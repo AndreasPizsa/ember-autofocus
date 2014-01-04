@@ -1,4 +1,4 @@
-##ember-autofocus 0.0.1
+##ember-autofocus 0.0.2
 
 Automatically focus on an input field upon page load in Ember
 ```html
