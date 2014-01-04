@@ -1,4 +1,4 @@
-##ember-autofocus 0.0.3 <span style="float:right">[<img src="//benschwarz.github.io/bower-badges/badge@2x.png" width="130" height="30">](#install-bower)</span>
+##ember-autofocus 0.0.3
 
 Automatically focus on an input field upon page load in Ember
 ```html
@@ -43,7 +43,7 @@ Thus, [Change](http://31.media.tumblr.com/tumblr_lnssyhB9FW1qkmpj8o1_500.gif)!
 
 ## Installing
 
-### <a name="install-bower"></a>Bower
+### Bower
 ```
 bower install ember-autofocus
 ```
@@ -121,11 +121,10 @@ I have found some very valuable advice during my research which I have built int
 + [Matthew Beale](https://github.com/mixonic) for his excellent article on "[Lifecycle hooks in EmberJS Views](http://madhatted.com/2013/6/8/lifecycle-hooks-in-ember-js-views)".
 + [hyder](http://discuss.emberjs.com/users/hyder/activity) for linking to Matthew's article.
 + [Mark Pilgrim](https://github.com/diveintomark) for the [`autofocus` feature detection snippet](http://diveintohtml5.info/detect.html).
-+ [Ben Schwarz](https://github.com/benschwarz/) for the pretty [Bower badge](http://benschwarz.github.io/bower-badges/).
+
 
 ## License
 Copyright (c) 2014 Andreas Pizsa. Released under an MIT license.
 
 --------------------------------
 Made with ❤ in Vienna, Austria.
-<span style="float:right">[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/AndreasPizsa/ember-autofocus/trend.png)](https://bitdeli.com/free "Bitdeli Badge")</span>
