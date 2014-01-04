@@ -1,4 +1,4 @@
-##ember-autofocus 0.0.2
+##ember-autofocus 0.0.3
 
 Automatically focus on an input field upon page load in Ember
 ```html
@@ -45,7 +45,7 @@ Thus, [Change](http://31.media.tumblr.com/tumblr_lnssyhB9FW1qkmpj8o1_500.gif)!
 
 ### Bower
 ```
-bower install -S ember-autofocus
+bower install ember-autofocus
 ```
 
 In your `index.html`:
@@ -53,9 +53,6 @@ In your `index.html`:
 ```html
 <script type="text/javascript" src="bower_components/ember-autofocus/dist/ember-autofocus.min.js)"></script>
 ```
-
-### Copy & Paste
-Well, honestly you can as well just copy and paste it into your `App.js` file but that won’t give you all the free updates in the future.
 
 ## Usage
 
@@ -91,7 +88,7 @@ Use a CSS selector to autofocus on a specific element.
 ```html
 // myView.handlebars
    :
-{{ autofocus on '#my-special-element .my-unique-class' }}
+{{ autofocus on='#my-special-element .my-unique-class' }}
 {# end of file #}
 ``` 
 
