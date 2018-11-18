@@ -1,5 +1,7 @@
 ##ember-autofocus 0.0.3
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/AndreasPizsa/ember-autofocus.svg)](https://greenkeeper.io/)
+
 Automatically focus on an input field upon page load in Ember
 ```html
 // myView.handlebars
